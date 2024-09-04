@@ -35,12 +35,12 @@ import {RateLimit} from './rate-limit';
  */
 
 export class IssuesProcessor {
-  private static _updatedSince(timestamp: string, num_days: number): boolean {
-    const daysInMillis = 1000 * 60 * 60 * 24 * num_days;
+  private static _updatedSince(timestamp: string, num_hours: number): boolean {
+    const hoursInMillis = 1000 * 60 * 60 * num_hours;
     const millisSinceLastUpdated =
       new Date().getTime() - new Date(timestamp).getTime();
 
-    return millisSinceLastUpdated <= daysInMillis;
+    return millisSinceLastUpdated <= hoursInMillis;
   }
 
   private static _endIssueProcessing(issue: Issue): void {
