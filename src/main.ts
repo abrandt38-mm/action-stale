@@ -21,6 +21,10 @@ async function _run(): Promise<void> {
       );
     }
 
+    core.info(
+        `Starting modified stale GitHub action.`
+    );
+    
     await issueProcessor.processIssues();
 
     const rateLimitAtEnd = await issueProcessor.getRateLimit();
