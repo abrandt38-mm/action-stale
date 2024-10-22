@@ -471,7 +471,9 @@ export class IssuesProcessor {
           daysBeforeStale
         );
       }
-
+      issueLogger.info(
+        `Based on current date ${getHumanizedDate(new Date())} ...`
+      );
       if (shouldBeStale) {
         if (shouldIgnoreUpdates) {
           issueLogger.info(
