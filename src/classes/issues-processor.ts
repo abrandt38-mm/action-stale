@@ -85,7 +85,7 @@ export class IssuesProcessor {
     this.operations = new StaleOperations(this.options);
 
     this._logger.info(
-      LoggerService.yellow(`Starting the stale action process...`)
+      LoggerService.yellow(`Starting the modified stale action processor...`)
     );
 
     if (this.options.debugOnly) {
